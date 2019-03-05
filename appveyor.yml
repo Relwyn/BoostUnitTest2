@@ -7,7 +7,6 @@ configuration: Debug
 platform: x64
 
 install:
-
 - ps: >-
     $vsixPath = "$($env:USERPROFILE)\BoostUnitTestAdapter.vsix"
 
@@ -68,7 +67,8 @@ on_finish:
 
 
     "SET PATH=C:\\Python34;C:\\Python34\\Scripts;%PATH%"
-
+    
+    pip update
     pip install codecov
 
     codecov -f .\ConvertedReport.xml -X gcov
